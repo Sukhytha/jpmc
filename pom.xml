@@ -16,7 +16,14 @@
 					<target>10</target>
 				</configuration>
 			</plugin>
+
 		</plugins>
+		<testResources>
+			<testResource>
+				<directory>test/src/resources</directory>
+			</testResource>
+		</testResources>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
 	</build>
 
 	<name>movie-theater</name>
@@ -30,6 +37,7 @@
 		<gson.version>2.8.9</gson.version>
 		<mockito.version>1.7.4</mockito.version>
 		<log4j.version>1.2.17</log4j.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
@@ -74,11 +82,6 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.12</version>
 		</dependency>
 	</dependencies>
 </project>

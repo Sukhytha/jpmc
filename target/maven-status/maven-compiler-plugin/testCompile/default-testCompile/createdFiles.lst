@@ -1,5 +1,5 @@
 com/jpmc/theater/TheaterTests.class
-com/jpmc/theater/service/provider/LocalDateProviderTests.class
 com/jpmc/theater/service/PricingServiceTests.class
 com/jpmc/theater/service/MovieServiceTests.class
 com/jpmc/theater/service/ReservationServiceTests.class
+com/jpmc/theater/service/provider/LocalDateProviderTests.class
