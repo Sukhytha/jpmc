@@ -57,8 +57,8 @@ public class PricingService
     private PricingService()
     {
         Properties properties = new Properties();
-        InputStream is;
-        try
+        InputStream is=null;
+        try //try with resources can be used
         {
             //load a properties file from class path, inside static method
             ClassLoader configClassLoader = Theater.class.getClassLoader();
@@ -79,6 +79,15 @@ public class PricingService
             //There is no need to create custom exceptions if there is no value in doing so.
             logger.error(e);
             throw new JpmcTheaterException();
+        }
+        finally
+        {
+            if(is!=null) {
+                try {
+                    is.close();
+                } catch (IOException e) {
+                }
+            }
         }
 
     }

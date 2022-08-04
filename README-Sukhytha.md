@@ -15,8 +15,10 @@ There is no need to create custom exceptions if there is no value in doing so.
 8) Log handling has been introduced but has to be enhanced across the system. This will be vital when it comes to debug and root cause analysis in a production set up. 
 9) Test framework: Mockitto can be used to write Junits and regression tests. 
 The end to end(large) real tests can cover a few sunny day rainy day scenarios.
-Extensive small(junits) and medium tests(can be mocked or real involves interacting code units) can be written using mockitto.
-Between the combination of the large, medium and small tests we could achieve the level of test coverage desired.
+Extensive small(junits) and medium tests(can be mocked or real involves interacting code units) can be written using mockitto. 
+Junits should be part of the build. The medium and large tests can be hosted on a platform like Jenkins and should be scheduled to run independently.
+This will help catch regression issues that manual testing might miss.
+Using combination of the large, medium and small tests we could achieve the level of test coverage desired to ensure code quality.
 
 ## Instructions
 * **Consider this to be your project! Feel free to make any changes**

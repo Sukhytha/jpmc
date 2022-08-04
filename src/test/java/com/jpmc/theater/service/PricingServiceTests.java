@@ -44,14 +44,29 @@ public class PricingServiceTests {
 
         pricingService = PricingService.getInstance();
         customer = spy(new Customer("TestCust Abc", "id00001"));
-                //below lines are used for set up to test the loading of the rules.
-        properties = new Properties();
-        InputStream is;
-        //load a properties file from class path, inside static method
-        ClassLoader configClassLoader = Theater.class.getClassLoader();
-        is = configClassLoader.getResourceAsStream("rulesConfigTest.properties");
-        if (is != null) {
-            properties.load(is);
+        InputStream is=null;
+        try {
+            //below lines are used for set up to test the loading of the rules.
+            properties = new Properties();
+
+            //load a properties file from class path, inside static method
+            ClassLoader configClassLoader = Theater.class.getClassLoader();
+            is = configClassLoader.getResourceAsStream("rulesConfigTest.properties");
+            if (is != null) {
+                properties.load(is);
+            }
+        }
+        finally
+        {
+            if(is!=null)
+            {
+                try {
+                    is.close();
+                }catch(IOException e)
+                {
+
+                }
+            }
         }
     }
 
